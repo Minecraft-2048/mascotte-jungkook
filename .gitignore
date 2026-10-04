@@ -1,0 +1,7 @@
+# l'exe se telecharge dans les Releases
+*.exe
+__pycache__/
+# contenus prepares pour Instagram
+instagram/
+# apercus de controle du script d atlas (regeneres a chaque construction)
+personnages/**/apercu*

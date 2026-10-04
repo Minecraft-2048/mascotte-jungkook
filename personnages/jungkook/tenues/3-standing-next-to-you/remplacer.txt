@@ -1,0 +1,2 @@
+# pose ratee par l'IA (visage triste) remplacee par une autre, en miroir
+danse_d=danse_a miroir
