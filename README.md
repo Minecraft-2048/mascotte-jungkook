@@ -1,10 +1,10 @@
 # Mascotte Jungkook
 
-![Il danse en changeant de tenue](apercus/danse.gif)
+![Il se balade sur le bureau, saute sur une fenêtre et danse sur la musique](apercus/bureau.gif)
 
-Une petite mascotte de bureau en pixel art pour Windows, façon chibi Jungkook : il se balade en bas de l'écran, envoie des bisous, fait des cœurs avec ses mains, et **danse et chante en rythme quand ton PC joue de la musique**. Six tenues inspirées de ses clips et de ses campagnes.
+Une petite mascotte de bureau en pixel art pour Windows, façon chibi Jungkook : il se balade sur l'écran, saute sur le haut des fenêtres, envoie des bisous, fait des cœurs avec ses mains, et **danse et chante en rythme quand ton PC joue de la musique**. Six tenues inspirées de ses clips et de ses campagnes.
 
-*A small pixel-art desktop pet for Windows, chibi Jungkook style: he walks along the bottom of the screen, blows kisses, makes finger hearts, and dances on the beat whenever your PC plays music. Six outfits inspired by his music videos and campaigns. Single exe, no install.*
+*A small pixel-art desktop pet for Windows, chibi Jungkook style: he walks along the bottom of the screen, jumps onto your windows, blows kisses, makes finger hearts, and dances on the beat whenever your PC plays music. Six outfits inspired by his music videos and campaigns. Single exe, no install.*
 
 > **Projet de fan, non officiel.** Il n'est ni créé ni approuvé par Jungkook, BTS, BIGHIT MUSIC ou HYBE. Les dessins sont des créations originales en pixel art (générées avec l'aide d'une IA) ; aucune image officielle n'est utilisée.
 
@@ -21,9 +21,10 @@ L'exe n'est pas signé : Windows peut afficher « Windows a protégé votre ordi
 | **Clic** | un bisou, puis un cœur, puis un salut, chacun son tour |
 | **Bisou** | il porte la main à ses lèvres, tend le bras, et trois cœurs filent jusqu'à ta souris où ils éclatent |
 | **Cœur** | un petit cœur coréen avec les doigts, puis un grand cœur avec les bras au-dessus de la tête |
+| **Fenêtres** | pendant ses balades, il saute sur le haut des fenêtres, s'y promène, suit la fenêtre quand tu la déplaces et redescend si elle se ferme (clic droit → *Sauter sur une fenêtre* ou *Redescendre au sol*) |
 | **Musique** | dès qu'une musique joue sur le PC, il trouve le tempo et danse dessus ; de temps en temps il prend le micro et des notes s'envolent |
 | **Survol** | une petite barre apparaît : ♥ envoie un bisou, ⋯ ouvre le menu |
-| **Glisser** | il court dans le sens où on le tire et garde sa nouvelle place |
+| **Glisser** | il court dans le sens où on le tire ; lâché en l'air, il retombe sur la fenêtre du dessous ou au sol |
 | **Clic droit** | animations, **tenue**, taille, balade, danse avec la musique, premier plan, lancement au démarrage de Windows |
 
 Et le reste du temps il respire, cligne des yeux, se promène, joue à la console ou fait la sieste.
@@ -31,6 +32,8 @@ Et le reste du temps il respire, cligne des yeux, se promène, joue à la consol
 ## Les tenues
 
 ![Les six tenues](apercus/tenues.png)
+
+![Il danse en changeant de tenue](apercus/danse.gif)
 
 Clic droit → **Tenue**. Son choix est retenu pour la prochaine fois.
 
@@ -57,7 +60,7 @@ MascotteJungkook.exe --etat chant
 MascotteJungkook.exe --etat tenue Seven
 ```
 
-`--etat tenue` sans nom passe à la tenue suivante. Les autres états de la mascotte (`waving`, `jumping`, `walking`, `sleep`…) marchent aussi.
+`--etat tenue` sans nom passe à la tenue suivante. `--etat platform` le fait sauter sur une fenêtre, `--etat down` le fait redescendre. Les autres états de la mascotte (`waving`, `jumping`, `walking`, `sleep`…) marchent aussi.
 
 ## Compiler
 

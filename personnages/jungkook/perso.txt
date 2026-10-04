@@ -11,6 +11,7 @@ coeurs=Saranghae ♥|Borahae ♥|Je t'aime ♥|Pour toi ♥
 chansons=♪ La la la ♪|♫ Na na na ♫|♪ Ooh~ yeah ♪|♫ Everybody ! ♫|♪ Mmh mmh ♪
 danse=♪ J'adore cette chanson !|♫ On danse ?|♪ Allez, tous ensemble !|♫ Montez le son !
 musique=1
+plateformes=1
 sieste=1
 droite=745
 tenues=Classique|Seven|Fake Love|Standing Next to You|Dreamers|Calvin Klein

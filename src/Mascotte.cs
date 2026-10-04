@@ -741,6 +741,7 @@ namespace MascotteClaude
         {
             menu = new ContextMenu();
             menu.Items.Add(Element(Perso.Titre, ActionPrincipale));
+            if (Perso.Plateformes && Perso.Role != "plateforme") menu.Items.Add(Element("Sauter sur une fenêtre", SauterSurFenetre));
             if (Perso.Plateformes) menu.Items.Add(Element("Redescendre au sol", Descendre));
             if (objets != null) menu.Items.Add(Element("Faire apparaître un bloc « ? »", Bloc));
             menu.Items.Add(new Separator());
