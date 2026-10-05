@@ -459,6 +459,7 @@ namespace MascotteClaude
 
         double echelle = Perso.Echelle;
         bool balade = true, premierPlan = true;
+        bool coeurs = true;              // cœurs et bisous : décochés, plus aucun cœur ne s'envole et elle n'en fait plus d'elle-même
         Point maison, ancre;             // point au sol sous la mascotte : sa place habituelle, et sa place du moment
         double cible;
         DateTime dernierPas;
@@ -803,6 +804,8 @@ namespace MascotteClaude
                     if (!v) Musique(false, periode);
                     Enregistrer();
                 }));
+            if (AGeste(LigneBisou) || AGeste(LigneCoeur))
+                menu.Items.Add(Coche("Envoyer des cœurs et des bisous", coeurs, v => { coeurs = v; Enregistrer(); }));
             menu.Items.Add(Coche("Toujours au premier plan", premierPlan, v => { premierPlan = v; Topmost = v; Enregistrer(); }));
             menu.Items.Add(Coche("Lancer au démarrage de Windows", LanceAuDemarrage(), DefinirDemarrage));
             menu.Items.Add(Element("Revenir dans le coin", () =>
@@ -1033,7 +1036,7 @@ namespace MascotteClaude
             double tirage = hasard.NextDouble();
             if (AGeste(LigneBisou) && hasard.Next(5) < 2)
             {
-                int geste = hasard.Next(20);
+                int geste = coeurs ? hasard.Next(20) : 14 + hasard.Next(6);      // sans les cœurs : danse ou chant
                 if (geste < 7) Bisou();
                 else if (geste < 14) Coeur();
                 else if (geste < 17) Danser();
@@ -1200,7 +1203,7 @@ namespace MascotteClaude
                     if (++clics % 3 == 0) SautSurPlace(Parole()); else Faire(salut, 2, Parole());
                     break;
                 case "bisou":                                    // bisou, cœur, salut, chacun son tour
-                    switch (clics++ % 3)
+                    switch (coeurs ? clics++ % 3 : 2)
                     {
                         case 0: Bisou(); break;
                         case 1: Coeur(); break;
@@ -1428,6 +1431,7 @@ namespace MascotteClaude
                         case "premierplan": premierPlan = nombre != 0; break;
                         case "pieces": pieces = (int)nombre; break;
                         case "musique": dansePermise = nombre != 0; break;
+                        case "coeurs": coeurs = nombre != 0; break;
                         case "tenue": tenue = Math.Max(0, (int)nombre); break;
                     }
                 }
@@ -1452,6 +1456,7 @@ namespace MascotteClaude
                 "premierplan=" + (premierPlan ? "1" : "0"),
                 "pieces=" + pieces,
                 "musique=" + (dansePermise ? "1" : "0"),
+                "coeurs=" + (coeurs ? "1" : "0"),
                 "tenue=" + tenue
             });
         }
@@ -2029,8 +2034,8 @@ namespace MascotteClaude
             mode = Mode.Danse;
             minuteurHasard.Stop();
             phrase++;
-            if (phrase % 11 == 0 && AGeste(LigneBisou)) { Jouer(bisou, 1, Phrase); Dire(AuHasard(Perso.Bisous), 2.5); }
-            else if (phrase % 7 == 0 && AGeste(LigneCoeur)) { Jouer(coeur, 1, Phrase); Dire(AuHasard(Perso.Coeurs), 2.5); }
+            if (coeurs && phrase % 11 == 0 && AGeste(LigneBisou)) { Jouer(bisou, 1, Phrase); Dire(AuHasard(Perso.Bisous), 2.5); }
+            else if (coeurs && phrase % 7 == 0 && AGeste(LigneCoeur)) { Jouer(coeur, 1, Phrase); Dire(AuHasard(Perso.Coeurs), 2.5); }
             else if (phrase % 3 == 0 && AGeste(LigneChant))
             {
                 Jouer(Rythme(LigneChant, periode), 2, Phrase);
@@ -2174,6 +2179,7 @@ namespace MascotteClaude
             double retard, bool eclate, double balancement)
         {
             if (dessins == null || dessin >= dessins.Length) return;
+            if (!coeurs && dessin <= DessinCoeurRouge) return;          // cœurs désactivés dans le menu : seules les notes s'envolent
             Particule p = null;
             foreach (Particule libre in particules)
                 if (libre.Libre) { p = libre; break; }

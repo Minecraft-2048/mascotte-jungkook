@@ -2,6 +2,8 @@
 
 ![Il se balade sur le bureau, saute sur une fenêtre et danse sur la musique](apercus/bureau.gif)
 
+▶ **[Vidéo de présentation, en anglais (33 s)](apercus/video-en.mp4)** · *[Watch the 33-second video](apercus/video-en.mp4)*
+
 Une petite mascotte de bureau en pixel art pour Windows, façon chibi Jungkook : il se balade sur l'écran, saute sur le haut des fenêtres, envoie des bisous, fait des cœurs avec ses mains, et **danse et chante en rythme quand ton PC joue de la musique**. Six tenues inspirées de ses clips et de ses campagnes.
 
 *A small pixel-art desktop pet for Windows, chibi Jungkook style: he walks along the bottom of the screen, jumps onto your windows, blows kisses, makes finger hearts, and dances on the beat whenever your PC plays music. Six outfits inspired by his music videos and campaigns. Single exe, no install.*
@@ -25,7 +27,7 @@ L'exe n'est pas signé : Windows peut afficher « Windows a protégé votre ordi
 | **Musique** | dès qu'une musique joue sur le PC, il trouve le tempo et danse dessus ; de temps en temps il prend le micro et des notes s'envolent |
 | **Survol** | une petite barre apparaît : ♥ envoie un bisou, ⋯ ouvre le menu |
 | **Glisser** | il court dans le sens où on le tire ; lâché en l'air, il retombe sur la fenêtre du dessous ou au sol |
-| **Clic droit** | animations, **tenue**, taille, balade, danse avec la musique, premier plan, lancement au démarrage de Windows |
+| **Clic droit** | animations, **tenue**, taille, balade, danse avec la musique, cœurs et bisous (à décocher pour qu'aucun cœur ne s'envole), premier plan, lancement au démarrage de Windows |
 
 Et le reste du temps il respire, cligne des yeux, se promène, joue à la console ou fait la sieste.
 
